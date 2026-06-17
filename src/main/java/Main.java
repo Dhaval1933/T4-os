@@ -3,8 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc=new Scanner(System.in);
-        System.out.print("$ ");
-        String a=sc.next();
-        System.err.print(a+": command not found");
+        while(true){
+            System.out.print("$ ");
+            if(!sc.hasNext()){
+                break;
+            }
+            String a=sc.nextLine().trim();
+            if (a.isEmpty()) {
+                continue;
+            }
+            System.err.println(a+": command not found");
+        }
     }
 }
